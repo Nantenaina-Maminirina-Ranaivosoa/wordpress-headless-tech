@@ -40,6 +40,24 @@ const marketingServices = [
   },
 ];
 
+const realEstateProjects = [
+  {
+    title: "Résidence Moderne",
+    location: "Antananarivo",
+    description: "Projet résidentiel moderne avec design contemporain."
+  },
+  {
+    title: "Immeuble Professionnel",
+    location: "Centre-ville",
+    description: "Espaces professionnels adaptés aux entreprises modernes."
+  },
+  {
+    title: "Complexe Immobilier",
+    location: "Zone urbaine",
+    description: "Projet immobilier à usage mixte, résidentiel et commercial."
+  }
+];
+
 const Home = () => {
   return (
     <>
@@ -115,6 +133,35 @@ const Home = () => {
             >
               <h3>{service.title}</h3>
               <p>{service.description}</p>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section className="real-estate">
+        <header className="section-header">
+          <h2>Immobilier</h2>
+          <p>
+            Des projets immobiliers pensés pour la valeur, la modernité et la
+            performance.
+          </p>
+        </header>
+
+        <div className="real-estate-grid">
+          {realEstateProjects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              className="real-estate-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <div className="real-estate-content">
+                <h3>{project.title}</h3>
+                <span>{project.location}</span>
+                <p>{project.description}</p>
+              </div>
             </motion.article>
           ))}
         </div>
