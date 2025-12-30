@@ -19,6 +19,27 @@ const skills = [
   },
 ];
 
+const marketingServices = [
+  {
+    title: "Stratégie Digitale",
+    description:
+      "Analyse, planification et mise en place de stratégies digitales efficaces.",
+  },
+  {
+    title: "SEO & Visibilité",
+    description:
+      "Optimisation pour les moteurs de recherche afin d’augmenter la visibilité.",
+  },
+  {
+    title: "Branding & Image",
+    description: "Création d’une identité digitale forte et cohérente.",
+  },
+  {
+    title: "Développement Web",
+    description: "Sites modernes, performants et adaptés aux besoins métiers.",
+  },
+];
+
 const Home = () => {
   return (
     <>
@@ -68,6 +89,32 @@ const Home = () => {
             >
               <h3>{skill.name}</h3>
               <p>{skill.description}</p>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section className="marketing">
+        <header className="section-header">
+          <h2>Marketing Digital</h2>
+          <p>
+            Des solutions digitales pensées pour la performance et la
+            croissance.
+          </p>
+        </header>
+
+        <div className="marketing-grid">
+          {marketingServices.map((service, index) => (
+            <motion.article
+              key={service.title}
+              className="marketing-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
             </motion.article>
           ))}
         </div>
