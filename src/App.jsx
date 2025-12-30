@@ -1,12 +1,12 @@
-import { useState } from 'react'
-
+import Layout from "./components/layout/Layout";
+import Home from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <h1>HEllo</h1>
-  )
+    <Layout>
+      <Home />
+    </Layout>
+  );
 }
 
-export default App
+export default App;
